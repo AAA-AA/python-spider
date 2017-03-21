@@ -1,11 +1,14 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-from baike_spider import html_downloader
-from baike_spider import html_outputer
-from baike_spider import html_parser
-from baike_spider import url_manager
+
 
 import sys
+
+import html_downloader
+import html_outputer
+import html_parser
+import url_manager
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -13,9 +16,13 @@ sys.setdefaultencoding('utf-8')
 class SpiderMain(object):
     #初始化爬虫模块
     def __init__(self):
+        # 初始化url调度器
         self.urls = url_manager.UrlManager()
+        # 初始化下载器
         self.downloader = html_downloader.HtmlDownloader()
+        # 初始化解析器
         self.parser = html_parser.Parser()
+        # 内容输出器
         self.outputer = html_outputer.HtmlOutputer()
 
     def craw(self, root_url):
