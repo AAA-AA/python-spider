@@ -1,8 +1,10 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 import sys
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
+
 
 class UrlManager(object):
     def __init__(self):
@@ -10,7 +12,7 @@ class UrlManager(object):
         self.old_urls = set()
 
     def has_new_url(self):
-        return len(self.new_urls) !=0
+        return len(self.new_urls) != 0
 
     def get_new_url(self):
         new_url = self.new_urls.pop()
